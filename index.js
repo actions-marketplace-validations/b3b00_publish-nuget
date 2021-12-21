@@ -71,6 +71,7 @@ class Action {
 
         if (pushOutput.includes("already exists")) {
             process.stdout.write(`::set-output name=PACKAGE_HAS_BEEN_PUSHED::false` + os.EOL);
+            return;
             }
         else {
             process.stdout.write(`::set-output name=PACKAGE_HAS_BEEN_PUSHED::true` + os.EOL);
