@@ -55,6 +55,9 @@ outputs:
     SYMBOLS_PACKAGE_PATH:
         description: Path to the generated symbols package
 
+    PACKAGE_HAS_BEEN_PUSHED:
+        description: true if a new package has been pushed
+
 runs:
     using: node12
     main: index.js

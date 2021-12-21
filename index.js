@@ -69,6 +69,13 @@ class Action {
 
         console.log(pushOutput)
 
+        if (pushOutput.includes("already exists")) {
+            process.stdout.write(`::set-output name=PACKAGE_HAS_BEEN_PUSHED::false` + os.EOL);
+            }
+        else {
+            process.stdout.write(`::set-output name=PACKAGE_HAS_BEEN_PUSHED::true` + os.EOL);
+            }
+
         if (/error/.test(pushOutput))
             this._printErrorAndExit(`${/error.*/.exec(pushOutput)[0]}`)
 
